@@ -1,0 +1,27 @@
+﻿@errorBackgroundColor: #ffbfbf;
+@errorBoldColor: #cf0000;
+@warningBackgroundColor: #fff09b;
+@warningBoldColor: #ccad02;
+
+.messageBorder {
+	border-width:3px;
+	border-style:outset;
+}
+
+.messageBox {
+	.messageBorder;
+	padding:3px;
+}
+
+.errorMessage {
+	.messageBox;
+	background: @errorBackgroundColor;
+	border-color: @errorBoldColor;
+}
+
+.warningMessage {
+	.messageBox;
+	background: @warningBackgroundColor;
+	border-color: @warningBoldColor;
+}
+

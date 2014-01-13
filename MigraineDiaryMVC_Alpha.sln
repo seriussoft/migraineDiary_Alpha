@@ -1,0 +1,72 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MigraineDiaryMVC", "MigraineDiaryMVC\MigraineDiaryMVC.csproj", "{AD26CA29-FD48-421F-A77F-29A170158C4B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MigraineDiaryMVC.Tests", "MigraineDiaryMVC.Tests\MigraineDiaryMVC.Tests.csproj", "{170483C5-C2A3-4761-9CAF-795174A68BB8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MigraineUtilities", "MigraineUtilities\MigraineUtilities.csproj", "{3DE88C23-36B8-425B-820F-8831223744A8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MigraineRepository", "MigraineRepository\MigraineRepository.csproj", "{D738AF5A-EE7D-44AC-B8D9-03566EDEBDAC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MigraineModels", "MigraineModels\MigraineModels.csproj", "{8317FC70-9A08-4EEF-B316-7E0B8AB7CEE8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MigraineKendoHelpers", "MigraineKendoViews\MigraineKendoHelpers.csproj", "{F6427482-9360-49E4-AED4-D364D5C17076}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Helpers", "Helpers", "{8220C2C4-E184-4913-95D2-2D7DAF3E033D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SeriusSoft.Tools", "SeriusSoft.Tools\SeriusSoft.Tools.csproj", "{BD89D5EA-57D7-4AEB-B478-FDD199ACF791}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SeriusSoft.MVC.Helpers", "SeriusSoft.MVC.Helpers\SeriusSoft.MVC.Helpers.csproj", "{676861FE-3193-4B2D-8B4C-3D28F9717F39}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{AD26CA29-FD48-421F-A77F-29A170158C4B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AD26CA29-FD48-421F-A77F-29A170158C4B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AD26CA29-FD48-421F-A77F-29A170158C4B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AD26CA29-FD48-421F-A77F-29A170158C4B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{170483C5-C2A3-4761-9CAF-795174A68BB8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{170483C5-C2A3-4761-9CAF-795174A68BB8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{170483C5-C2A3-4761-9CAF-795174A68BB8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{170483C5-C2A3-4761-9CAF-795174A68BB8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3DE88C23-36B8-425B-820F-8831223744A8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3DE88C23-36B8-425B-820F-8831223744A8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3DE88C23-36B8-425B-820F-8831223744A8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3DE88C23-36B8-425B-820F-8831223744A8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D738AF5A-EE7D-44AC-B8D9-03566EDEBDAC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D738AF5A-EE7D-44AC-B8D9-03566EDEBDAC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D738AF5A-EE7D-44AC-B8D9-03566EDEBDAC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D738AF5A-EE7D-44AC-B8D9-03566EDEBDAC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8317FC70-9A08-4EEF-B316-7E0B8AB7CEE8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8317FC70-9A08-4EEF-B316-7E0B8AB7CEE8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8317FC70-9A08-4EEF-B316-7E0B8AB7CEE8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8317FC70-9A08-4EEF-B316-7E0B8AB7CEE8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F6427482-9360-49E4-AED4-D364D5C17076}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F6427482-9360-49E4-AED4-D364D5C17076}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F6427482-9360-49E4-AED4-D364D5C17076}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F6427482-9360-49E4-AED4-D364D5C17076}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BD89D5EA-57D7-4AEB-B478-FDD199ACF791}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BD89D5EA-57D7-4AEB-B478-FDD199ACF791}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BD89D5EA-57D7-4AEB-B478-FDD199ACF791}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BD89D5EA-57D7-4AEB-B478-FDD199ACF791}.Release|Any CPU.Build.0 = Release|Any CPU
+		{676861FE-3193-4B2D-8B4C-3D28F9717F39}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{676861FE-3193-4B2D-8B4C-3D28F9717F39}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{676861FE-3193-4B2D-8B4C-3D28F9717F39}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{676861FE-3193-4B2D-8B4C-3D28F9717F39}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{F6427482-9360-49E4-AED4-D364D5C17076} = {8220C2C4-E184-4913-95D2-2D7DAF3E033D}
+		{BD89D5EA-57D7-4AEB-B478-FDD199ACF791} = {8220C2C4-E184-4913-95D2-2D7DAF3E033D}
+		{676861FE-3193-4B2D-8B4C-3D28F9717F39} = {8220C2C4-E184-4913-95D2-2D7DAF3E033D}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		EnterpriseLibraryConfigurationToolBinariesPath = packages\Unity.2.1.505.2\lib\NET35
+	EndGlobalSection
+EndGlobal

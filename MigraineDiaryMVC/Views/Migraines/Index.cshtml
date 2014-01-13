@@ -1,0 +1,86 @@
+﻿@model SeriusSoft.MigraineDiaryMVC.MigraineModels.MigrainesModel
+
+@*model IEnumerable<SeriusSoft.MigraineDiaryMVC.MigraineModels.MigraineModel>*@
+
+@{
+	ViewBag.Title = "Migraine Management";
+}
+
+<h2>@ViewBag.Title</h2>
+
+<div class="warningMessages">
+	@if(Model.HasWarnings)
+	{
+			foreach(var warning in Model.Warnings)
+			{
+				<p><span class="warningMessage">@warning</span></p>
+			}
+	}
+</div>
+
+<div class="errorMessages">
+	@if(Model.HasErrors)
+  {
+			foreach(var error in Model.Errors)
+			{
+				<p><span class="errorMessage">@error</span></p>
+			}
+	}
+</div>
+
+<h3>
+	View the: @Html.ActionLink("Calendar", "MonthlyCalendar")
+</h3>
+
+<p>
+	@Html.ActionLink("Create New", "Create")
+</p>
+<table class="table alternatingTable">
+	<tr>
+		<th>
+			@Html.DisplayNameFor(model => model.DefaultMigraine.DateStarted)
+		</th>
+		<th>
+			@Html.DisplayNameFor(model => model.DefaultMigraine.TimeStarted)
+		</th>
+		<th>
+			@Html.DisplayNameFor(model => model.DefaultMigraine.TimeEnded)
+		</th>
+		<th>
+			@Html.DisplayNameFor(model => model.DefaultMigraine.Severity)
+		</th>
+		<th>
+			@Html.DisplayNameFor(model => model.DefaultMigraine.Comment)
+		</th>
+		<th></th>
+	</tr>
+
+	<tbody>
+	@foreach (var item in Model.MigrainesInScope)
+ {
+		<tr class="@TableHelpers.AlternateClass(this.ViewBag, "tableRow","tableAlternateRow")">
+			<td>
+				@Html.DisplayFor(modelItem => item.DateStarted)
+			</td>
+			<td>
+				@Html.DisplayFor(modelItem => item.TimeStarted)
+			</td>
+			<td>
+				@Html.DisplayFor(modelItem => item.TimeEnded)
+			</td>
+			<td>
+				@Html.DisplayFor(modelItem => item.Severity)
+			</td>
+			<td>
+				@Html.DisplayFor(modelItem => item.Comment)
+			</td>
+			<td>
+				@Html.ActionLink("Edit", "Edit", new { id = item.ID }) |
+            @Html.ActionLink("Details", "Details", new { id = item.ID }) |
+            @Html.ActionLink("Delete", "Delete", new { id = item.ID })
+			</td>
+		</tr>
+ }
+		</tbody>
+
+</table>

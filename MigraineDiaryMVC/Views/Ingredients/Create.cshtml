@@ -1,0 +1,55 @@
+﻿@model SeriusSoft.MigraineDiaryMVC.MigraineModels.IngredientModel
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Create</h2>
+
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(false)
+
+    <fieldset>
+        <legend>IngredientModel</legend>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Name)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Name)
+            @Html.ValidationMessageFor(model => model.Name)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.DosageID, "Dosage")
+        </div>
+        <div class="editor-field">
+            @try{@Html.DropDownList("DosageID", (SelectList)ViewBag.DosageID, new { @class = "chzn-select" })}catch(Exception e){
+							<ul>
+								<li>@e.Message</li>
+								<li>@e.Source</li>
+								<li>@e.StackTrace</li>
+								<ul>
+									<li>@e.InnerException != null ? @e.InnerException.Message : @String.Empty</li>
+									<li>@e.InnerException != null ? @e.InnerException.Source : @String.Empty</li>
+									<li>@e.InnerException != null ? @e.InnerException.StackTrace : @String.Empty</li>
+								</ul>
+							</ul>
+							}
+            @Html.ValidationMessageFor(model => model.DosageID)
+        </div>
+
+        <p>
+            <input type="submit" value="Create" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+		<script type="text/javascript"> $(".chzn-select").chosen(); $(".chzn-select-deselect").chosen({allow_single_deselect:true}); </script>
+}

@@ -1,0 +1,29 @@
+﻿@model SeriusSoft.MigraineDiaryMVC.MigraineModels.DosageModel
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>DosageModel</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Quantity)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Quantity)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.UnitOfMeasurement.Name)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.UnitOfMeasurement.Name)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.DosageID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

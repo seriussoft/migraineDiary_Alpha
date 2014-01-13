@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>kendo.data</id>
+    <version>2012.3.1114</version>
+    <title>kendo.data</title>
+    <authors>Telerik</authors>
+    <owners>Telerik</owners>
+    <licenseUrl>http://www.kendoui.com/faq/licensing.aspx</licenseUrl>
+    <requireLicenseAcceptance>true</requireLicenseAcceptance>
+    <description>kendo.data</description>
+    <summary>kendo.data</summary>
+    <tags>JavaScript Kendo UI kendo.data</tags>
+    <dependencies>
+      <dependency id="kendo.core" version="[2012.3.1114]" />
+    </dependencies>
+  </metadata>
+</package>

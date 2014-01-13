@@ -1,0 +1,51 @@
+﻿@model SeriusSoft.MigraineDiaryMVC.MigraineModels.MigraineModel
+
+@{
+    ViewBag.Title = "MigraineAdd";
+}
+
+<h2>MigraineAdd</h2>
+
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>MigraineModel</legend>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.DateStarted)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.DateStarted)
+            @Html.ValidationMessageFor(model => model.DateStarted)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.LengthOfMigraine)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.LengthOfMigraine)
+            @Html.ValidationMessageFor(model => model.LengthOfMigraine)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Severity)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Severity)
+            @Html.ValidationMessageFor(model => model.Severity)
+        </div>
+
+        <p>
+            <input type="submit" value="Create" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

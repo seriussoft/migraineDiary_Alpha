@@ -1,0 +1,46 @@
+﻿@model SeriusSoft.MigraineDiaryMVC.MigraineModels.IngredientModel
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Edit</h2>
+
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>IngredientModel</legend>
+
+        @Html.HiddenFor(model => model.IngredientID)
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Name)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Name)
+            @Html.ValidationMessageFor(model => model.Name)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.DosageID, "Dosage")
+        </div>
+        <div class="editor-field">
+						@Html.DropDownList("DosageID", (SelectList)ViewBag.Dosages, new { @class="chzn-select" })
+            @Html.ValidationMessageFor(model => model.DosageID)
+        </div>
+
+        <p>
+            <input type="submit" value="Save" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+		<script type="text/javascript"> $(".chzn-select").chosen(); $(".chzn-select-deselect").chosen({allow_single_deselect:true}); </script>
+}

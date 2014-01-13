@@ -1,0 +1,24 @@
+﻿/*.messageBorder {
+	border-width:3px;
+	border-style:outset;
+}
+
+.messageBox {
+	.messageBorder;
+	padding:3px;
+}*/
+
+.errorMessage {
+	border:3px outset #cf0000;
+	background:#ffbfbf;
+}
+
+.warningMessage {
+	border:3px outset #ccad02;
+	background:#fff09b;
+}
+
+
+.errorMessage, .warningMessage {
+	padding:3px;
+}

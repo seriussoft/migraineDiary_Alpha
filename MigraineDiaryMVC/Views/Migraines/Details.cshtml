@@ -1,0 +1,50 @@
+﻿@model SeriusSoft.MigraineDiaryMVC.MigraineModels.MigraineModel
+
+@{
+	ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+	<legend>MigraineModel</legend>
+
+	<div class="display-label">
+		@Html.DisplayNameFor(model => model.DateStarted)
+	</div>
+	<div class="display-field">
+		@Html.DisplayFor(model => model.DateStarted)
+	</div>
+
+	<div class="display-label">
+		@Html.DisplayNameFor(model => model.TimeStarted)
+	</div>
+	<div class="display-field">
+		@Html.DisplayFor(model => model.TimeStarted)
+	</div>
+
+	<div class="display-label">
+		@Html.DisplayNameFor(model => model.TimeEnded)
+	</div>
+	<div class="display-field">
+		@Html.DisplayFor(model => model.TimeEnded)
+	</div>
+
+	<div class="display-label">
+		@Html.DisplayNameFor(model => model.Severity)
+	</div>
+	<div class="display-field">
+		@Html.DisplayFor(model => model.Severity)
+	</div>
+
+	<div class="display-label">
+		@Html.DisplayNameFor(model => model.Comment)
+	</div>
+	<div class="display-field">
+		@Html.DisplayFor(model => model.Comment)
+	</div>
+</fieldset>
+<p>
+	@Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

@@ -1,0 +1,68 @@
+﻿@model SeriusSoft.MigraineDiaryMVC.MigraineModels.MigraineModel
+
+@{
+	ViewBag.Title = "Create";
+}
+
+<h2>Create</h2>
+
+@using (Html.BeginForm())
+{
+	@Html.ValidationSummary(true)
+
+	<fieldset>
+		<legend>MigraineModel</legend>
+
+		<div class="editor-label">
+			@Html.LabelFor(model => model.DateStarted)
+		</div>
+		<div class="editor-field">
+			@Html.EditorFor(model => model.DateStarted)
+			@Html.ValidationMessageFor(model => model.DateStarted)
+		</div>
+
+		<div class="editor-label">
+			@Html.LabelFor(model => model.TimeStarted)
+		</div>
+		<div class="editor-field">
+			@Html.EditorFor(model => model.TimeStarted)
+			@Html.ValidationMessageFor(model => model.TimeStarted)
+		</div>
+
+		<div class="editor-label">
+			@Html.LabelFor(model => model.TimeEnded)
+		</div>
+		<div class="editor-field">
+			@Html.EditorFor(model => model.TimeEnded)
+			@Html.ValidationMessageFor(model => model.TimeEnded)
+		</div>
+
+		<div class="editor-label">
+			@Html.LabelFor(model => model.Severity)
+		</div>
+		<div class="editor-field">
+			@Html.EditorFor(model => model.Severity)
+			@Html.ValidationMessageFor(model => model.Severity)
+		</div>
+
+		<div class="editor-label">
+			@Html.LabelFor(model => model.Comment)
+		</div>
+		<div class="editor-field">
+			@Html.EditorFor(model => model.Comment)
+			@Html.ValidationMessageFor(model => model.Comment)
+		</div>
+
+		<p>
+			<input type="submit" value="Create" />
+		</p>
+	</fieldset>
+}
+
+<div>
+	@Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+	@Scripts.Render("~/bundles/jqueryval")
+}

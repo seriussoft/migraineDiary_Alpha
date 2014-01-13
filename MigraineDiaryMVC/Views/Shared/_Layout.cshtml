@@ -1,0 +1,109 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>@ViewBag.Title - SeriusSoft Migraine Diary</title>
+        <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+        <meta name="viewport" content="width=device-width" />
+      @Styles.Render("~/Content/css")
+			@*@Styles.Render("~/Content/less")*@
+			@Styles.Render("~/bundles/less")
+			@Styles.Render("~/Content/themes/chosen/chosen.css")
+
+			@Styles.Render("~/bundles/Content/kendo")
+			@Styles.Render("~/bundles/Content/kendo/2012.3.1315/kendo.common.min.css")
+			@Styles.Render("~/bundles/Content/kendo/2012.3.1315/kendo.default.min.css")
+			@Styles.Render("~/bundles/Content/kendo/2012.3.1315/kendo.metro.min.css")
+
+      @Scripts.Render("~/bundles/modernizr")
+			
+			@*@Scripts.Render("http://code.jquery.com/jquery-1.8.3.min.js")
+			@Scripts.Render("~/Content/themes/chosen/chosen.jquery.min.js")*@
+
+			@Scripts.Render("~/bundles/kendo")
+			@*@RenderSection("scripts", required: false)*@
+
+			@*@Styles.Render("~/Content/kendo/2012.3.1315/kendo.blueopal.min.css")*@
+			@*@Styles.Render("~/Content/kendo/2012.3.1315/kendo.default.min.css")*@
+			@*@Scripts.Render("~/bundles/jquery")*@
+			@*@Scripts.Render("~/bundles/jquery")*@
+			
+
+			@*@Styles.Render("~/Content/kendo")
+			@Styles.Render("~/bundles/jquery")
+			@Styles.Render("~/bundles/kendo")*@
+			
+    	@*<link href="@Url.Content("~/Content/kendo/2012.3.1315/kendo.common.min.css")" rel="stylesheet" type="text/css" />
+	<link href="@Url.Content("~/Content/kendo/2012.3.1315/kendo.dataviz.min.css")" rel="stylesheet" type="text/css" />
+	<link href="@Url.Content("~/Content/kendo/2012.3.1315/kendo.blueopal.min.css")" rel="stylesheet" type="text/css" />
+	<link href="@Url.Content("~/Content/kendo/2012.3.1315/kendo.dataviz.blueopal.min.css")" rel="stylesheet" type="text/css" />
+	<script src="@Url.Content("~/Scripts/kendo/2012.3.1315/jquery.min.js")"></script>
+	<script src="@Url.Content("~/Scripts/kendo/2012.3.1315/kendo.all.min.js")"></script>
+	<script src="@Url.Content("~/Scripts/kendo/2012.3.1315/kendo.aspnetmvc.min.js")"></script>*@
+</head>
+    <body>
+        <header>
+            <div class="content-wrapper">
+                <div class="float-left">
+                    <p class="site-title">@Html.ActionLink("SeriusSoft Migraine Diary", "Index", "Home")</p>
+                </div>
+                <div class="float-right">
+                    <section id="login">
+                        @Html.Partial("_LoginPartial")
+                    </section>
+                    <nav>
+                        <ul id="menu">
+                            <li>@Html.ActionLink("Home", "Index", "Home")</li>
+														<li class="HoverList">
+															<span style="display:none">Dictionary</span>
+															<ul>
+																<li>@Html.ActionLink("Migraines", "Index", "Migraines")</li>
+																<li><i>@Html.ActionLink("Triggers", "Index", "Triggers")</i></li>
+																@*<li>@Html.ActionLink("Triggers", "Index", "Triggers")</li>*@
+																<li>@Html.ActionLink("Medications", "Index", "Medications")</li>
+																<li>@Html.ActionLink("Ingredients", "Index", "Ingredients")</li>
+																<li>@Html.ActionLink("Dosages", "Index", "Dosages")</li>
+																<li>@Html.ActionLink("Units", "Index", "UnitOfMeasurements")</li>
+																<li>@Html.ActionLink("Symptoms", "Index", "Symptoms")</li>
+															</ul>
+														</li>
+                            @*<li>@Html.ActionLink("About", "About", "Home")</li>*@
+                            @*<li>@Html.ActionLink("Contact", "Contact", "Home")</li>*@
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </header>
+        <div id="body">
+            @RenderSection("featured", required: false)
+            <section class="content-wrapper main-content clear-fix">
+                @RenderBody()
+            </section>
+        </div>
+        <footer>
+            <div class="content-wrapper">
+                <div class="float-left">
+                    <p>&copy; 2013 - SeriusSoft</p>
+                </div>
+            </div>
+        </footer>
+
+        @*@Scripts.Render("~/bundles/jquery")*@
+			@Scripts.Render("http://code.jquery.com/jquery-1.8.3.min.js")
+				@Scripts.Render("~/Content/themes/chosen/chosen.jquery.min.js")
+
+			
+			@*@Scripts.Render("~/bundles/jquery")*@
+			@*@Scripts.Render("~/bundles/kendo")*@
+      
+			@RenderSection("scripts", required: false)
+    </body>
+</html>
+
+@helper AlternateClass(string classOne, string classTwo)
+{
+	if (ViewBag.AlternateCounter == null) { ViewBag.AlternateCounter = 0; }
+	
+	<text>@(ViewBag.AlternateCounter % 2 == 0 ? classOne : classTwo)</text>
+	ViewBag.AlternateCounter++;
+}

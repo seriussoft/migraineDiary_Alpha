@@ -1,0 +1,48 @@
+﻿//Colors
+@facebookBackground: #3b5998;
+@facebookBackgroundHover: rgba(59, 89, 152, 0.61);
+@facebookForeground: #FFFFFF;
+@googleBackground: #dd4b39;
+@googleBackgroundHover: rgba(221, 75, 57, 0.61);
+@googleForground: #ffffff;
+
+.externalButtonPlain {
+    border-radius: 3px;
+    -moz-border-radius: 3px;
+}
+
+.externalButtonHover {
+    box-shadow: 0 0 5px rgba(0,0,0,0.5);
+    -moz-box-shado: 0 0 5px rgba(0,0,0,0.5);
+    -webkit-box-shadow: 0 0 5px rgba(0,0,0,0.5);
+}
+
+.btn, input {
+    .externalButtonPlain;
+}
+
+.btn:hover, input:hover {
+    .externalButtonHover;
+}
+
+.facebookButtonPlain {
+    background-color: @facebookBackground;
+    color: @facebookForeground;
+    .externalButtonPlain;
+}
+
+.facebookButtonPlain:hover {
+    //background-color: @facebookBackgroundHover;
+    .externalButtonHover;
+}
+
+.googleButtonPlain {
+    background-color: @googleBackground;
+    color: @googleForground;
+    .externalButtonPlain;
+}
+
+.googleButtonPlain:hover {
+    //background-color: @googleBackgroundHover;
+    .externalButtonHover;
+}

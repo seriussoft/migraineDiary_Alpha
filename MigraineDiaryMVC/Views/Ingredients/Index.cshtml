@@ -1,0 +1,41 @@
+﻿@model IEnumerable<SeriusSoft.MigraineDiaryMVC.MigraineModels.IngredientModel>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table alternatingTable">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Dosage)
+        </th>
+        <th></th>
+    </tr>
+
+	<tbody>
+@foreach (var item in Model) {
+    <tr class="@TableHelpers.AlternateClass(this.ViewBag, "tableRow","tableAlternateRow")">
+        <td>
+            @Html.DisplayFor(modelItem => item.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Dosage.Display)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.IngredientID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.IngredientID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.IngredientID })
+        </td>
+    </tr>
+}
+	</tbody>
+
+</table>

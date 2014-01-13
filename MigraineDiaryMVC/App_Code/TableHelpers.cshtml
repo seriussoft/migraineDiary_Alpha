@@ -1,0 +1,9 @@
+﻿@helper AlternateClass(dynamic viewBag, string classOne, string classTwo)
+{
+	if (viewBag.AlternateCounter == null) { viewBag.AlternateCounter = 0; }
+	
+	<text>@(viewBag.AlternateCounter % 2 == 0 ? classOne : classTwo)</text>
+	viewBag.AlternateCounter++;
+	
+}
+

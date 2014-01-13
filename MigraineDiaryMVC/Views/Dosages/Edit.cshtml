@@ -1,0 +1,47 @@
+﻿@model SeriusSoft.MigraineDiaryMVC.MigraineModels.DosageModel
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Edit</h2>
+
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>DosageModel</legend>
+
+        @Html.HiddenFor(model => model.DosageID)
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Quantity)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Quantity)
+            @Html.ValidationMessageFor(model => model.Quantity)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.UnitOfMeasurementID, "UnitOfMeasurement")
+        </div>
+        <div class="editor-field">
+            @*@Html.DropDownList("UnitOfMeasurementID", String.Empty)*@
+						@Html.DropDownList("UnitOfMeasurementID", (SelectList)ViewBag.UnitOfMeasurements, new { @class = "chzn-select" })
+            @Html.ValidationMessageFor(model => model.UnitOfMeasurementID)
+        </div>
+
+        <p>
+            <input type="submit" value="Save" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+		<script type="text/javascript"> $(".chzn-select").chosen(); $(".chzn-select-deselect").chosen({allow_single_deselect:true}); </script>
+}

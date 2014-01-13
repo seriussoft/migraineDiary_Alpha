@@ -1,0 +1,97 @@
+﻿@model SeriusSoft.MigraineDiaryMVC.MigraineModels.MigraineModel
+
+@{
+	ViewBag.Title = "Edit";
+}
+
+<h2>Edit</h2>
+
+@using (Html.BeginForm())
+{
+	@Html.ValidationSummary(true)
+
+	<fieldset>
+		<legend>MigraineModel</legend>
+
+		@Html.HiddenFor(model => model.ID)
+
+		<div class="editor-label">
+			@Html.LabelFor(model => model.DateStarted)
+		</div>
+		<div class="editor-field">
+			@Html.EditorFor(model => model.DateStarted)
+			@Html.ValidationMessageFor(model => model.DateStarted)
+		</div>
+
+		@*@{
+		@Html.Raw(this.PageContext.Page.Request.Browser.Browser);
+		//var a = new HttpBrowserCapabilitiesWrapper(this.PageContext.Page.Request.Browser.Browser.Capabilities);
+		//@Html.Raw(a.Browser);
+		}*@
+		@if (this.PageContext.Page.Request.Browser.Browser.ToLower() == "chrome")
+		{
+			<div class="editor-label">
+				@Html.LabelFor(model => model.TimeStarted)
+			</div>
+			<div class="editor-field">
+				@Html.TextBoxFor(model => model.TimeStarted,"{0:HH:mm}")
+				@Html.ValidationMessageFor(model => model.TimeStarted)
+			</div>
+
+			<div class="editor-label">
+				@Html.LabelFor(model => model.TimeEnded)
+			</div>
+			<div class="editor-field">
+				@Html.TextBoxFor(model => model.TimeEnded,"{0:HH:mm}")
+				@Html.ValidationMessageFor(model => model.TimeEnded)
+			</div>
+		}
+		else
+		{
+			<div class="editor-label">
+				@Html.LabelFor(model => model.TimeStarted)
+			</div>
+			<div class="editor-field">
+				@Html.EditorFor(model => model.TimeStarted)
+				@Html.ValidationMessageFor(model => model.TimeStarted)
+			</div>
+
+			<div class="editor-label">
+				@Html.LabelFor(model => model.TimeEnded)
+			</div>
+			<div class="editor-field">
+				@Html.EditorFor(model => model.TimeEnded)
+				@Html.ValidationMessageFor(model => model.TimeEnded)
+			</div>
+		}
+
+
+		<div class="editor-label">
+			@Html.LabelFor(model => model.Severity)
+		</div>
+		<div class="editor-field">
+			@Html.EditorFor(model => model.Severity)
+			@Html.ValidationMessageFor(model => model.Severity)
+		</div>
+
+		<div class="editor-label">
+			@Html.LabelFor(model => model.Comment)
+		</div>
+		<div class="editor-field">
+			@Html.EditorFor(model => model.Comment)
+			@Html.ValidationMessageFor(model => model.Comment)
+		</div>
+
+		<p>
+			<input type="submit" value="Save" />
+		</p>
+	</fieldset>
+}
+
+<div>
+	@Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+	@Scripts.Render("~/bundles/jqueryval")
+}
