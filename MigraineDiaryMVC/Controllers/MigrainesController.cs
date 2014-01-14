@@ -8,6 +8,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using MigraineDiaryMVC.Models;
+using MigraineDiaryMVC.ViewModels;
 using SeriusSoft.MigraineDiaryMVC.MigraineModels;
 using SeriusSoft.MigraineDiaryMVC.MigraineRepository;
 
@@ -181,17 +182,19 @@ namespace MigraineDiaryMVC.Controllers
 
 		[HttpPost]
 		[Route("log-new-migraine")]
-		public ActionResult Create(MigraineModel migraineModel)
+		//public ActionResult Create(MigraineModel migraineModel)
+		public ActionResult Create(EditableMigraineViewModel migraineViewModel)
 		{
 			if (ModelState.IsValid)
 			{
+				var migraineModel = migraineViewModel.ToMigraineModel();
 				//migraineModel.ID = Guid.NewGuid();
 				DataContext.Migraines.Add(migraineModel);
 				DataContext.SaveChanges();
 				return RedirectToAction("Index");
 			}
 
-			return View(migraineModel);
+			return View(migraineViewModel);
 		}
 
 		#endregion	Create
@@ -208,14 +211,20 @@ namespace MigraineDiaryMVC.Controllers
 				return HttpNotFound();
 			}
 
-			return View(migraineModel);
+			return View(EditableMigraineViewModel.FromMigraineModel(migraineModel));
 		}
 
 		[HttpPost]
-		public ActionResult Edit(MigraineModel migraineModel)
+		[Route("edit-migraine-{id?}")]
+		public ActionResult Edit(EditableMigraineViewModel migraineViewModel)
 		{
 			if (ModelState.IsValid)
 			{
+				var modelUpdates = migraineViewModel.ToMigraineModel();
+
+				var migraineModel = HelperMethods.FindFromGuid(DataContext, migraineViewModel.ID.ToString());
+				migraineModel.Update(modelUpdates);
+
 				DataContext.Entry(migraineModel).State = EntityState.Modified;
 				try
 				{
@@ -230,7 +239,7 @@ namespace MigraineDiaryMVC.Controllers
 				}
 				return RedirectToAction("Index");
 			}
-			return View(migraineModel);
+			return View(migraineViewModel);
 		}
 
 		#endregion	Edit

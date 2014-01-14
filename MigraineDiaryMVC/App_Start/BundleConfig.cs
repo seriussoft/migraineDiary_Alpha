@@ -23,14 +23,15 @@ namespace MigraineDiaryMVC
 
 		private static void RegisterContentBundles(BundleCollection bundles)
 		{
-			bundles.Add(new StyleBundle("~/Content/css").Include("~/Content/site.css"));//.IncludeDirectory("~/Content/specificCss", "*.css", true));
+			bundles.Add(new StyleBundle("~/bundles/Content/css").Include("~/Content/site.css"));//.IncludeDirectory("~/Content/specificCss", "*.css", true));
 			
-			bundles.Add(new StyleBundle("~/Content/themes/chosen").Include("~/Content/themes/chosen/chosen.css"));
+			bundles.Add(new StyleBundle("~/bundles/ContentThemes/chosen").Include("~/Content/themes/chosen/chosen.css"));
 
 			AddLessBundles(bundles);
 
 			RegisterJQueryContentBundles(bundles);
 			RegisterKendoContentBundles(bundles);
+			RegisterBootstrapContentBundles(bundles);
 		}
 
 		private static void AddLessBundles(BundleCollection bundles)
@@ -61,7 +62,11 @@ namespace MigraineDiaryMVC
 			RegisterModernizrAndDefaultScriptBundles(bundles);
 
 			RegisterKendoScriptBundles(bundles);
-		} 
+
+			RegisterBootstrapScriptBundles(bundles);
+		}
+
+		
 
 		#endregion	Core
 
@@ -78,7 +83,7 @@ namespace MigraineDiaryMVC
 		private static void RegisterJQueryScriptBundles(BundleCollection bundles)
 		{
 			bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
-									"~/Scripts/jquery-{version}.js"));
+									"~/Scripts/jquery-{version}.js", new CssRewriteUrlTransform()));
 
 			bundles.Add(new ScriptBundle("~/bundles/jqueryui").Include(
 									"~/Scripts/jquery-ui-{version}.js"));
@@ -90,7 +95,7 @@ namespace MigraineDiaryMVC
 
 		private static void RegisterJQueryContentBundles(BundleCollection bundles)
 		{
-			bundles.Add(new StyleBundle("~/Content/themes/base/css").Include(
+			bundles.Add(new StyleBundle("~/bundles/ContentThemes/base/css").Include(
 									"~/Content/themes/base/jquery.ui.core.css",
 									"~/Content/themes/base/jquery.ui.resizable.css",
 									"~/Content/themes/base/jquery.ui.selectable.css",
@@ -109,16 +114,18 @@ namespace MigraineDiaryMVC
 		#region Kendo
 		private static void RegisterKendoScriptBundles(BundleCollection bundles)
 		{
-			bundles.Add(new ScriptBundle("~/bundles/kendo").Include("~/Scripts/kendo/2012.3.1315/kendo.web.*", "~/Scripts/kendo/2012.3.1315/kendo.aspnetmvc.*", "~/Scripts/kendo/2012.3.1315/kendo.web.min.js"));
+			bundles.Add(new ScriptBundle("~/bundles/scripts/kendo").Include("~/Scripts/kendo/2012.3.1315/kendo.web.*", "~/Scripts/kendo/2012.3.1315/kendo.aspnetmvc.*", "~/Scripts/kendo/2012.3.1315/kendo.web.min.js"));
 		}
 
 		private static void RegisterKendoContentBundles(BundleCollection bundles)
 		{
-			bundles.Add(new StyleBundle("~/bundles/Content/kendo")
+			bundles.Add(new StyleBundle("~/bundles/kendoContent")
 				.Include
 				(
-					"~/Content/kendo/2012.3.1315/kendo.common.*"
-					//"~/Content/kendo/2012.3.1315/kendo.common.min.css"
+					//"~/Content/kendo/2012.3.1315/kendo.common.*"
+					"~/Content/kendo/2012.3.1315/kendo.common.min.css",
+					"~/Content/kendo/2012.3.1315/kendo.metro.min.css",
+					"~/Content/kendo/2012.3.1315/kendo.default.min.css"
 					//,"~/Content/kendo/2012.3.1315/kendo.default.*"
 					//,"~/Content/kendo/2012.3.1315/kendo.blueopal.*"
 				));
@@ -133,6 +140,29 @@ namespace MigraineDiaryMVC
 			//bundles.IgnoreList.Ignore("*.debug.js", OptimizationMode.WhenEnabled);
 		} 
 		#endregion
+
+		#region Bootstrap
+
+		private static void RegisterBootstrapScriptBundles(BundleCollection bundles)
+		{
+			bundles.Add
+			(
+				new ScriptBundle("~/bundles/scripts/twitter-bootstrap")
+					.IncludeDirectory("~/Scripts/bootstrap/", "*.min.js")
+					//.Include("~/Scripts/bootstrap/gcal.js")
+			);
+		}
+
+		private static void RegisterBootstrapContentBundles(BundleCollection bundles)
+		{
+			bundles.Add
+			(
+				new StyleBundle("~/bundles/content/twitter-bootstrap")
+					.IncludeDirectory("~/Content/bootstrap", "*.min.css")
+			);
+		}
+
+		#endregion	Bootstrap
 
 		#endregion	Register Helper Methods
 	}

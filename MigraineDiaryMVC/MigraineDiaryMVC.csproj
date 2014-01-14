@@ -279,6 +279,7 @@
     <Compile Include="Controllers\TriggersController.cs" />
     <Compile Include="Controllers\UnitOfMeasurementsController.cs" />
     <Compile Include="Controllers\UserProfileController.cs" />
+    <Compile Include="CustomValidations\RequiredIfTrue.cs" />
     <Compile Include="Filters\InitializeSimpleMembershipAttribute.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -331,10 +332,12 @@
     <Compile Include="Models\RoleModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
+    <Compile Include="ViewModels\EditableMigraineViewModel.cs" />
     <Compile Include="ViewModels\MigraineViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="App_Code\TableHelpers.cshtml" />
+    <Content Include="App_Code\BootstrapHelpers.cshtml" />
     <None Include="ClearScript.V8\ClearScriptV8-32.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
@@ -347,6 +350,11 @@
     <None Include="ClearScript.V8\v8-x64.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+    <Content Include="Content\bootstrap\bootstrap-datetimepicker.min.css" />
+    <Content Include="Content\bootstrap\bootstrap-theme.css" />
+    <Content Include="Content\bootstrap\bootstrap-theme.min.css" />
+    <Content Include="Content\bootstrap\bootstrap.css" />
+    <Content Include="Content\bootstrap\bootstrap.min.css" />
     <Content Include="Content\images\exhibition.png" />
     <Content Include="Content\images\facebook\active_200%402x.png" />
     <Content Include="Content\images\facebook\active_200.png" />
@@ -617,6 +625,7 @@
     <Content Include="Content\themes\Kendo\textures\stripe6.png" />
     <Content Include="DBScripts\ZeroToLatest_DB_Script.sql" />
     <Content Include="favicon.ico" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\themes\chosen\LICENSE.md" />
     <Content Include="Content\kendo\2012.3.1315\images\KendoUI.ttf" />
@@ -624,11 +633,17 @@
     <Content Include="Content\specificCss\ErrorsAndWarnings.css" />
     <Content Include="Content\specificLess\externalProviders.less" />
     <Content Include="Content\specificLess\dataGrids.less" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <None Include="Properties\PublishProfiles\migraindiary-alpha.seriussoft.com - Web Deploy.pubxml" />
     <None Include="Properties\PublishProfiles\migrainediary.seriussoft.com - Web Deploy.pubxml" />
-    <Content Include="Scripts\fullcalendar.js" />
-    <Content Include="Scripts\fullcalendar.min.js" />
-    <Content Include="Scripts\gcal.js" />
+    <Content Include="Scripts\bootstrap\bootstrap-datetimepicker.min.js" />
+    <Content Include="Scripts\bootstrap\bootstrap.js" />
+    <Content Include="Scripts\bootstrap\bootstrap.min.js" />
+    <Content Include="Scripts\bootstrap\fullcalendar.js" />
+    <Content Include="Scripts\bootstrap\fullcalendar.min.js" />
+    <Content Include="Scripts\bootstrap\gcal.js" />
     <None Include="Scripts\jquery-2.0.3.intellisense.js" />
     <Content Include="Scripts\jquery-2.0.3.js" />
     <Content Include="Scripts\jquery-2.0.3.min.js" />
