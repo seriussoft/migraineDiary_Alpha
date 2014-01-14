@@ -1,0 +1,5 @@
+This is where external work goes. 
+This is a personal project, but if something valueable comes through, it may be merged into the root.
+
+If someone wishes to contribute, they should create a branch off of this one and then I can merge changes in as they've 
+been verified and tested; as long as they don't go against the flow they'll at least make it into the external branch.
