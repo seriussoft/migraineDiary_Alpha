@@ -1,4 +1,5 @@
-﻿@model SeriusSoft.MigraineDiaryMVC.MigraineModels.MigraineModel
+﻿@model MigraineDiaryMVC.ViewModels.EditableMigraineViewModel
+@*@model SeriusSoft.MigraineDiaryMVC.MigraineModels.MigraineModel*@
 
 @{
 	ViewBag.Title = "Edit";
@@ -15,78 +16,127 @@
 
 		@Html.HiddenFor(model => model.ID)
 
-		<div class="editor-label">
-			@Html.LabelFor(model => model.DateStarted)
-		</div>
-		<div class="editor-field">
-			@Html.EditorFor(model => model.DateStarted)
-			@Html.ValidationMessageFor(model => model.DateStarted)
-		</div>
+		<table id="newModelTable">
 
-		@*@{
+			<tr>
+				<td class="editor-label">
+					@Html.LabelFor(model => model.DateStarted)
+				</td>
+				<td class="editor-field">
+					@Html.EditorFor(model => model.DateStarted)
+					@Html.ValidationMessageFor(model => model.DateStarted)
+				</td>
+			</tr>
+
+			@*@{
 		@Html.Raw(this.PageContext.Page.Request.Browser.Browser);
 		//var a = new HttpBrowserCapabilitiesWrapper(this.PageContext.Page.Request.Browser.Browser.Capabilities);
 		//@Html.Raw(a.Browser);
 		}*@
-		@if (this.PageContext.Page.Request.Browser.Browser.ToLower() == "chrome")
-		{
-			<div class="editor-label">
-				@Html.LabelFor(model => model.TimeStarted)
-			</div>
-			<div class="editor-field">
-				@Html.TextBoxFor(model => model.TimeStarted,"{0:HH:mm}")
-				@Html.ValidationMessageFor(model => model.TimeStarted)
-			</div>
+			@*@if (this.PageContext.Page.Request.Browser.Browser.ToLower() == "chrome")
+			{
+				<tr>
+					<td class="editor-label">
+						@Html.LabelFor(model => model.TimeStarted)
+					</td>
+					<td class="editor-field">
+						@Html.TextBoxFor(model => model.TimeStarted, "{0:HH:mm}")
+						@Html.ValidationMessageFor(model => model.TimeStarted)
+					</td>
+				</tr>
+				
+				<tr>
+					<td class="editor-label">
+						@Html.LabelFor(model => model.StillHappening)
+					</td>
+					<td class="editor-field">
+						@Html.EditorFor(model => model.StillHappening)
+						@Html.ValidationMessageFor(model => model.StillHappening)
+					</td>
+				</tr>
+		 
+				<tr class="hideableRow">
+					<td class="editor-label">
+						@Html.LabelFor(model => model.TimeEnded)
+					</td>
+					<td class="editor-field">
+						@Html.TextBoxFor(model => model.TimeEnded, "{0:HH:mm}")
+						@Html.ValidationMessageFor(model => model.TimeEnded)
+					</td>
+				</tr>
+			}
+			else
+			{
+				*@<tr>
+					<td class="editor-label">
+						@Html.LabelFor(model => model.TimeStarted)
+					</td>
+					<td class="editor-field">
+						@Html.EditorFor(model => model.TimeStarted)
+						@Html.ValidationMessageFor(model => model.TimeStarted)
+					</td>
+				</tr>
 
-			<div class="editor-label">
-				@Html.LabelFor(model => model.TimeEnded)
-			</div>
-			<div class="editor-field">
-				@Html.TextBoxFor(model => model.TimeEnded,"{0:HH:mm}")
-				@Html.ValidationMessageFor(model => model.TimeEnded)
-			</div>
-		}
-		else
-		{
-			<div class="editor-label">
-				@Html.LabelFor(model => model.TimeStarted)
-			</div>
-			<div class="editor-field">
-				@Html.EditorFor(model => model.TimeStarted)
-				@Html.ValidationMessageFor(model => model.TimeStarted)
-			</div>
+				<tr>
+					<td class="editor-label">
+						@Html.LabelFor(model => model.StillHappening)
+					</td>
+					<td class="editor-field">
+						@Html.EditorFor(model => model.StillHappening)
+						@Html.ValidationMessageFor(model => model.StillHappening)
+					</td>
+				</tr>
+		 
+				<tr class="hideableRow">
+					<td class="editor-label">
+						@Html.LabelFor(model => model.TimeEnded)
+					</td>
+					<td class="editor-field">
+						@Html.EditorFor(model => model.TimeEnded)
+						@Html.ValidationMessageFor(model => model.TimeEnded)
+					</td>
+				</tr>
+			@*}*@
 
-			<div class="editor-label">
-				@Html.LabelFor(model => model.TimeEnded)
-			</div>
-			<div class="editor-field">
-				@Html.EditorFor(model => model.TimeEnded)
-				@Html.ValidationMessageFor(model => model.TimeEnded)
-			</div>
-		}
+			<tr>
+				<td class="editor-label">
+					@Html.LabelFor(model => model.Severity)
+				</td>
+				<td class="editor-field">
+					@Html.EditorFor(model => model.Severity)
+					@Html.ValidationMessageFor(model => model.Severity)
+				</td>
+			</tr>
 
+			<tr>
+				<td class="editor-label">
+					@Html.LabelFor(model => model.Comment)
+				</td>
+				<td class="editor-field">
+					@Html.EditorFor(model => model.Comment)
+					@Html.ValidationMessageFor(model => model.Comment)
+				</td>
+			</tr>
 
-		<div class="editor-label">
-			@Html.LabelFor(model => model.Severity)
-		</div>
-		<div class="editor-field">
-			@Html.EditorFor(model => model.Severity)
-			@Html.ValidationMessageFor(model => model.Severity)
-		</div>
-
-		<div class="editor-label">
-			@Html.LabelFor(model => model.Comment)
-		</div>
-		<div class="editor-field">
-			@Html.EditorFor(model => model.Comment)
-			@Html.ValidationMessageFor(model => model.Comment)
-		</div>
+		</table>
 
 		<p>
 			<input type="submit" value="Save" />
 		</p>
 	</fieldset>
 }
+
+<script type="text/javascript">
+	$(document).ready(function () {
+		var checkBox = $("#@Html.NameFor(model => model.StillHappening)");
+		$("#newModelTable tr.hideableRow").toggle(!checkBox.checked);
+
+		$("#@Html.NameFor(model => model.StillHappening)").change(function () {
+			var self = this;
+			$("#newModelTable tr.hideableRow").toggle(!self.checked);
+		});
+	});
+</script>
 
 <div>
 	@Html.ActionLink("Back to List", "Index")

@@ -1,0 +1,33 @@
+﻿@helper TimePicker(string name, string dateTime = null, bool use12HourTime = true)
+{
+	var dateFormat = use12HourTime
+		? "hh:mm PP"
+		: "hh:mm";
+																	
+	<div id="@name" class="input-append">
+		<input data-format="@dateFormat" type="text" />
+		<span class="add-on">
+			<i data-time-icon="icon-time" data-date-icon="icon-calendar" />
+		</span>
+	</div>
+	<script type="text/javascript">
+		$(function () {
+			$('#@name').datetimepicker({
+				pickDate: false,
+				pick12HourFormat: @TrueFalseConverter(use12HourTime)
+			});
+		});
+	</script>
+}
+
+@helper TrueFalseConverter(bool value)
+{
+	if(value)
+	{
+		@:true
+	}
+	else
+	{
+		@:false
+	}
+}

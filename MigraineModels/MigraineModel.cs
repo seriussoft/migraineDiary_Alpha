@@ -23,10 +23,13 @@ namespace SeriusSoft.MigraineDiaryMVC.MigraineModels
 		[DataType(DataType.Time)]
 		public DateTime TimeStarted { get; set; }
 
-		[Required]
+		[DisplayName("Is the migraine still happening")]
+		public bool StillHappening { get; set; }
+
+		//[Required]
 		[DisplayName("Time Migraine Ended")]
 		[DataType(DataType.Time)]
-		public DateTime TimeEnded { get; set; }
+		public DateTime? TimeEnded { get; set; }
 
 		[Required]
 		[DisplayName("Severity (1-10)")]
@@ -66,6 +69,8 @@ namespace SeriusSoft.MigraineDiaryMVC.MigraineModels
 			this.TimeStarted = migraine.TimeStarted;
 			this.TimeEnded = migraine.TimeEnded;
 			this.Severity = migraine.Severity;
+			this.Comment = migraine.Comment;
+			this.StillHappening = migraine.StillHappening;
 
 			return this;
 		}

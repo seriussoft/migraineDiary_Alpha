@@ -5,22 +5,35 @@
         <title>@ViewBag.Title - SeriusSoft Migraine Diary</title>
         <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
         <meta name="viewport" content="width=device-width" />
-      @Styles.Render("~/Content/css")
+      @Styles.Render("~/bundles/Content/css")
 			@*@Styles.Render("~/Content/less")*@
-			@Styles.Render("~/bundles/less")
-			@Styles.Render("~/Content/themes/chosen/chosen.css")
+			@*@Styles.Render("~/bundles/less")*@
+			@*@Styles.Render("~/bundles/ContentThemes/chosen/chosen.css")*@
+			@Styles.Render("~/bundles/ContentThemes/chosen")
 
-			@Styles.Render("~/bundles/Content/kendo")
-			@Styles.Render("~/bundles/Content/kendo/2012.3.1315/kendo.common.min.css")
+			@Styles.Render("~/bundles/kendoContent")
+			@*@Styles.Render("~/bundles/Content/kendo/2012.3.1315/kendo.common.min.css")
 			@Styles.Render("~/bundles/Content/kendo/2012.3.1315/kendo.default.min.css")
-			@Styles.Render("~/bundles/Content/kendo/2012.3.1315/kendo.metro.min.css")
+			@Styles.Render("~/bundles/Content/kendo/2012.3.1315/kendo.metro.min.css")*@
+
+			@*Do not use this because it makes the site look really trashy!*@
+			@*@Styles.Render("~/bundles/content/twitter-bootstrap")*@
+
+			@Styles.Render("~/bundles/less")
+
+			@Scripts.Render("http://code.jquery.com/jquery-1.8.3.min.js")
+			@Scripts.Render("~/Content/themes/chosen/chosen.jquery.min.js")
 
       @Scripts.Render("~/bundles/modernizr")
 			
 			@*@Scripts.Render("http://code.jquery.com/jquery-1.8.3.min.js")
 			@Scripts.Render("~/Content/themes/chosen/chosen.jquery.min.js")*@
 
-			@Scripts.Render("~/bundles/kendo")
+			@Scripts.Render("~/bundles/scripts/kendo")
+
+
+			@Scripts.Render("~/bundles/scripts/twitter-bootstrap")
+
 			@*@RenderSection("scripts", required: false)*@
 
 			@*@Styles.Render("~/Content/kendo/2012.3.1315/kendo.blueopal.min.css")*@
@@ -89,8 +102,7 @@
         </footer>
 
         @*@Scripts.Render("~/bundles/jquery")*@
-			@Scripts.Render("http://code.jquery.com/jquery-1.8.3.min.js")
-				@Scripts.Render("~/Content/themes/chosen/chosen.jquery.min.js")
+			
 
 			
 			@*@Scripts.Render("~/bundles/jquery")*@
@@ -100,10 +112,11 @@
     </body>
 </html>
 
-@helper AlternateClass(string classOne, string classTwo)
+@*@helper AlternateClass(string classOne, string classTwo)
 {
 	if (ViewBag.AlternateCounter == null) { ViewBag.AlternateCounter = 0; }
 	
 	<text>@(ViewBag.AlternateCounter % 2 == 0 ? classOne : classTwo)</text>
 	ViewBag.AlternateCounter++;
-}
+}*@
+
