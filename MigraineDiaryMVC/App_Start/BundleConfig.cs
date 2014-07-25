@@ -64,6 +64,8 @@ namespace MigraineDiaryMVC
 			RegisterKendoScriptBundles(bundles);
 
 			RegisterBootstrapScriptBundles(bundles);
+
+      RegisterGenericScriptBundles(bundles);
 		}
 
 		
@@ -164,6 +166,19 @@ namespace MigraineDiaryMVC
 
 		#endregion	Bootstrap
 
-		#endregion	Register Helper Methods
-	}
+    #region Generic
+
+    private static void RegisterGenericScriptBundles(BundleCollection bundles)
+    {
+      bundles.Add
+      (
+        new ScriptBundle("~/bundles/scripts/generic")
+            .IncludeDirectory("~/Scripts/Generic", "*.js")
+      );
+    }
+
+    #endregion  Generic
+
+    #endregion	Register Helper Methods
+  }
 }

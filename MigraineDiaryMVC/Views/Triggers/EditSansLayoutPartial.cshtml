@@ -1,0 +1,48 @@
+﻿
+@model SeriusSoft.MigraineDiaryMVC.MigraineModels.TriggerModel
+
+@{
+    Layout = null;
+}
+
+<h2>Edit</h2>
+
+
+@Html.AntiForgeryToken()
+
+<div class="form-horizontal">
+    <h4>TriggerModel</h4>
+    <hr />
+    @Html.ValidationSummary(true)
+    @Html.HiddenFor(model => model.TriggerID)
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.TriggerTypeID, "TriggerTypeID", new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.DropDownList("TriggerTypeID", String.Empty)
+            @Html.ValidationMessageFor(model => model.TriggerTypeID)
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.Name, new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.Name)
+            @Html.ValidationMessageFor(model => model.Name)
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.Info, new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.Info)
+            @Html.ValidationMessageFor(model => model.Info)
+        </div>
+    </div>
+</div>
+
+<!-- Need to have something here so that we can show something was updated, but only for a couple of seconds before fading out (test w/ mobile) -->
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

@@ -645,6 +645,7 @@
     <Content Include="Scripts\bootstrap\fullcalendar.min.js" />
     <Content Include="Scripts\bootstrap\gcal.js" />
     <None Include="Scripts\jquery-2.0.3.intellisense.js" />
+    <Content Include="Scripts\Generic\DialogForm.js" />
     <Content Include="Scripts\jquery-2.0.3.js" />
     <Content Include="Scripts\jquery-2.0.3.min.js" />
     <Content Include="Scripts\jquery-ui-1.10.3.js" />
@@ -1184,6 +1185,8 @@
     <Content Include="Views\Account\_ExternalLoginsListPartial.cshtml" />
     <Content Include="Views\Account\_RemoveAccountPartial.cshtml" />
     <Content Include="Views\Account\_SetPasswordPartial.cshtml" />
+    <Content Include="Views\Triggers\EditSansLayoutPartial.cshtml" />
+    <Content Include="Views\Triggers\EditDialogPartial.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -1223,10 +1226,6 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\MigraineKendoViews\MigraineKendoHelpers.csproj">
-      <Project>{f6427482-9360-49e4-aed4-d364d5c17076}</Project>
-      <Name>MigraineKendoHelpers</Name>
-    </ProjectReference>
     <ProjectReference Include="..\MigraineModels\MigraineModels.csproj">
       <Project>{8317fc70-9a08-4eef-b316-7e0b8ab7cee8}</Project>
       <Name>MigraineModels</Name>

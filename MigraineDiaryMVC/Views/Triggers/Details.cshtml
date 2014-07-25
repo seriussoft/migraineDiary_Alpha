@@ -1,4 +1,5 @@
 ﻿@model SeriusSoft.MigraineDiaryMVC.MigraineModels.TriggerModel
+@using MigraineDiaryMVC.Helpers
 
 @{
     ViewBag.Title = "Details";
@@ -9,7 +10,7 @@
 <div>
     <h4>TriggerModel</h4>
 	<hr />
-    <dl class="dl-horizontal">
+    @*<dl class="dl-horizontal">
         <dt>
             @Html.DisplayNameFor(model => model.TriggerType.Name)
         </dt>
@@ -34,9 +35,40 @@
             @Html.DisplayFor(model => model.Info)
         </dd>
 
-    </dl>
+    </dl>*@
+    <fieldset class="dl-horizontal">
+        <legend>Trigger Info</legend>
+
+        <div>
+            @Html.DisplayNameFor(model => model.TriggerType.Name): @Html.DisplayFor(model => model.TriggerType.Name)
+        </div>
+
+        <div>
+            @Html.DisplayNameFor(model => model.Name): @Html.DisplayFor(model => model.Name)
+        </div>
+
+        <div>
+            @Html.DisplayNameFor(model => model.Info): @Html.DisplayFor(model => model.Info)
+        </div>
+
+        @*<div class="right">
+            @Html.DialogFormLink("Edit", Url.Action("Edit"), "Edit Trigger", "TriggerViewModel", Url.Action("Trigger"))
+        </div>*@
+
+    </fieldset>
 </div>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.TriggerID }) |
+    @*@Html.ActionLink("Edit", "Edit", new { id = Model.TriggerID }) |
+    @Html.ActionLink("Back to List", "Index")*@
+
+    @Html.DialogFormLink("Edit", Url.Action("EditNonAsync") + "/" + Model.TriggerID, "Trigger", String.Empty @*"Edit Trigger"*@, "TriggerContainer", Url.Action("Trigger")) | 
     @Html.ActionLink("Back to List", "Index")
 </p>
+
+<div id="TriggerContainer">
+    @*@{ Html.RenderAction("EditNonAsync"); }*@
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/scripts/generic")
+}

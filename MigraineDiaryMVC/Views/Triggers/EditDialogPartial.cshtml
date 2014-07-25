@@ -1,0 +1,10 @@
+﻿@model SeriusSoft.MigraineDiaryMVC.MigraineModels.TriggerModel
+
+@{
+    Layout = null;
+}
+
+@using (Html.BeginForm())
+{
+    @Html.Partial("EditSansLayoutPartial", Model)
+}

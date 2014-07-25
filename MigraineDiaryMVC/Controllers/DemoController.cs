@@ -1,116 +1,116 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.Mvc;
+﻿//using System;
+//using System.Collections.Generic;
+//using System.Linq;
+//using System.Web;
+//using System.Web.Mvc;
 
-namespace MigraineDiaryMVC.Controllers
-{
-	public class DemoController : BaseMigraineController
-	{
+//namespace MigraineDiaryMVC.Controllers
+//{
+//  public class DemoController : BaseMigraineController
+//  {
 
-		#region Calendar Test
+//    #region Calendar Test
 
-		public ActionResult Calendar()
-		{
-			return View();
-		}
+//    public ActionResult Calendar()
+//    {
+//      return View();
+//    }
 
-		#endregion	Calendar Test
+//    #endregion	Calendar Test
 
 
-		//
-		// GET: /Demo/
-		[Route("DemoController/")]
-		public ActionResult Index()
-		{
-			return View();
-		}
+//    //
+//    // GET: /Demo/
+//    [Route("DemoController/")]
+//    public ActionResult Index()
+//    {
+//      return View();
+//    }
 
-		//
-		// GET: /Demo/Details/5
+//    //
+//    // GET: /Demo/Details/5
 
-		public ActionResult Details(int id)
-		{
-			return View();
-		}
+//    public ActionResult Details(int id)
+//    {
+//      return View();
+//    }
 
-		//
-		// GET: /Demo/Create
+//    //
+//    // GET: /Demo/Create
 
-		public ActionResult Create()
-		{
-			return View();
-		}
+//    public ActionResult Create()
+//    {
+//      return View();
+//    }
 
-		//
-		// POST: /Demo/Create
+//    //
+//    // POST: /Demo/Create
 
-		[HttpPost]
-		public ActionResult Create(FormCollection collection)
-		{
-			try
-			{
-				// TODO: Add insert logic here
+//    [HttpPost]
+//    public ActionResult Create(FormCollection collection)
+//    {
+//      try
+//      {
+//        // TODO: Add insert logic here
 
-				return RedirectToAction("Index");
-			}
-			catch
-			{
-				return View();
-			}
-		}
+//        return RedirectToAction("Index");
+//      }
+//      catch
+//      {
+//        return View();
+//      }
+//    }
 
-		//
-		// GET: /Demo/Edit/5
+//    //
+//    // GET: /Demo/Edit/5
 
-		public ActionResult Edit(int id)
-		{
-			return View();
-		}
+//    public ActionResult Edit(int id)
+//    {
+//      return View();
+//    }
 
-		//
-		// POST: /Demo/Edit/5
+//    //
+//    // POST: /Demo/Edit/5
 
-		[HttpPost]
-		public ActionResult Edit(int id, FormCollection collection)
-		{
-			try
-			{
-				// TODO: Add update logic here
+//    [HttpPost]
+//    public ActionResult Edit(int id, FormCollection collection)
+//    {
+//      try
+//      {
+//        // TODO: Add update logic here
 
-				return RedirectToAction("Index");
-			}
-			catch
-			{
-				return View();
-			}
-		}
+//        return RedirectToAction("Index");
+//      }
+//      catch
+//      {
+//        return View();
+//      }
+//    }
 
-		//
-		// GET: /Demo/Delete/5
+//    //
+//    // GET: /Demo/Delete/5
 
-		public ActionResult Delete(int id)
-		{
-			return View();
-		}
+//    public ActionResult Delete(int id)
+//    {
+//      return View();
+//    }
 
-		//
-		// POST: /Demo/Delete/5
+//    //
+//    // POST: /Demo/Delete/5
 
-		[HttpPost]
-		public ActionResult Delete(int id, FormCollection collection)
-		{
-			try
-			{
-				// TODO: Add delete logic here
+//    [HttpPost]
+//    public ActionResult Delete(int id, FormCollection collection)
+//    {
+//      try
+//      {
+//        // TODO: Add delete logic here
 
-				return RedirectToAction("Index");
-			}
-			catch
-			{
-				return View();
-			}
-		}
-	}
-}
+//        return RedirectToAction("Index");
+//      }
+//      catch
+//      {
+//        return View();
+//      }
+//    }
+//  }
+//}

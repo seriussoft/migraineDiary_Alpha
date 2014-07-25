@@ -1,11 +1,17 @@
-﻿@using Kendo.Mvc.UI;
+﻿@*
+
+@using Kendo.Mvc.UI;
 @using SeriusSoft.MigraineDiaryMVC.MigraineKendoViews;
 @model Kendo.Mvc.UI.Calendar
+
+*@
 
 @*@this.Html.Kendo().*@
 @*@(Html.Kendo().Calendar().Name("MigraineCalendarControl").)*@
 
 @*@()*@
+
+@*
 
 @(Html.MigraineCalendar("MigraineCalendar").AsMonth()
 	.HtmlAttributes(new { style = "width:330px" })
@@ -79,3 +85,4 @@
         overflow: auto;
     }
 </style>
+*@
